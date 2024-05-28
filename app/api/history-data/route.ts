@@ -49,7 +49,7 @@ export type GetHistoryDataResponseType = Awaited<
 
 async function getHistoryData(
   userId: string,
-  timeframe: Timeframe,
+  timeframe: TimeFrame,
   period: Period
 ) {
   switch (timeframe) {
@@ -94,7 +94,7 @@ async function getYearHistoryData(userId: string, year: number) {
     let expense = 0;
     let income = 0;
 
-    const month = result.find((row) => row.month === i);
+    const month = result.find((row: any) => row.month === i);
     if (month) {
       expense = month._sum.expense || 0;
       income = month._sum.income || 0;
@@ -142,7 +142,7 @@ async function getMonthHistoryData(
     let expense = 0;
     let income = 0;
 
-    const day = result.find((row) => row.day === i);
+    const day = result.find((row: any) => row.day === i);
     if (day) {
       expense = day._sum.expense || 0;
       income = day._sum.income || 0;

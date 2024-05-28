@@ -63,7 +63,7 @@ async function getTransactionsHistory(userId: string, from: Date, to: Date) {
     },
   });
 
-  return transactions.map((transaction) => ({
+  return transactions.map((transaction: any) => ({
     ...transaction,
     // lets format the amount with the user currency
     formattedAmount: formatter.format(transaction.amount),
