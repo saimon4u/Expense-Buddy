@@ -1,12 +1,13 @@
 import prisma from "@/lib/prisma";
 import { Period, TimeFrame } from "@/lib/types";
 import { currentUser } from "@clerk/nextjs/server";
+import { error } from "console";
 import { getDaysInMonth } from "date-fns";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
 const getHistoryDataSchema = z.object({
-  timeFrame: z.enum(["month", "year"]),
+  timeframe: z.enum(["month", "year"]),
   month: z.coerce.number().min(0).max(11).default(0),
   year: z.coerce.number().min(2000).max(3000),
 });
@@ -18,12 +19,12 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const timeFrame = searchParams.get("timeFrame");
+  const timeframe = searchParams.get("timeframe");
   const year = searchParams.get("year");
   const month = searchParams.get("month");
 
   const queryParams = getHistoryDataSchema.safeParse({
-    timeFrame,
+    timeframe,
     month,
     year,
   });
@@ -34,7 +35,7 @@ export async function GET(request: Request) {
     });
   }
 
-  const data = await getHistoryData(user.id, queryParams.data.timeFrame, {
+  const data = await getHistoryData(user.id, queryParams.data.timeframe, {
     month: queryParams.data.month,
     year: queryParams.data.year,
   });
@@ -48,10 +49,10 @@ export type GetHistoryDataResponseType = Awaited<
 
 async function getHistoryData(
   userId: string,
-  timeFrame: TimeFrame,
+  timeframe: Timeframe,
   period: Period
 ) {
-  switch (timeFrame) {
+  switch (timeframe) {
     case "year":
       return await getYearHistoryData(userId, period.year);
     case "month":
