@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💸 Expense-Buddy
 
-## Getting Started
+Expense-Buddy is a sleek and intuitive expense tracking web application built with **Next.js**. It allows users to log income and expenses, view a breakdown of spending habits, and analyze trends through interactive charts. The app includes **dark/light theme support** and secure **Clerk-based authentication**.
 
-First, run the development server:
+## 🌐 Live Demo
+
+🔗 [Expense-Buddy Live](https://expense-buddy-4uyfkxwfg-saimons-projects.vercel.app/)
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js
+- **Authentication**: Clerk for Next.js
+- **Styling**: Tailwind CSS
+- **Charts**: Chart.js
+- **Deployment**: Vercel
+
+## 🔐 Features
+
+- 📊 Add, edit, and delete income and expenses
+- 📈 View expense breakdown via graphs
+- 💡 Light and dark mode support
+- 🔐 Secure authentication via Clerk
+- 📅 Organized history view of past transactions
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/saimon4u/Expense-Buddy.git
+cd Expense-Buddy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+  npm install
+  or
+  yarn install
+```
+### 3. Set up environment variables
+Create a **.env.local** file in the root directory and add the following:
+```bash
+  CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+  CLERK_SECRET_KEY=your-clerk-secret-key
+  NEXT_PUBLIC_CLERK_FRONTEND_API=your-clerk-frontend-api
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+```
+### 4. Run the app
+Create a **.env.local** file in the root directory and add the following:
+```bash
+  npm run dev
+  or
+  yarn dev
+```
+Visit http://localhost:3000 to use the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧑‍💻 Contributing
+Contributions are welcome! Feel free to submit a pull request or open an issue.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 📸 Screenshots
+![Dashboard Light Mode](https://github.com/user-attachments/assets/3229fc84-66e0-4ea7-be77-ae2ab5ed830a)
 
-To learn more about Next.js, take a look at the following resources:
+![Dashboard Dark Mode](https://github.com/user-attachments/assets/d5c20717-5199-432c-8047-54a0f14c8f64)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 👨‍💻 Developed  by Saimon Bhuiyan
